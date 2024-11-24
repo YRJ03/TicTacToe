@@ -1,0 +1,119 @@
+body{
+  background-color: #3d3d3d;
+}
+.ticTac {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.6) ;
+}
+
+h1.winner {
+  color: lightgreen;
+  text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.6);
+}
+
+h1.draw {
+  color: red;
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.6);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-color: #f0f0f0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box.filled {
+  background-color: #e0e0e0;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.box:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+
+.player-x {
+  color: #ff5722;
+  /* Bright orange for Player X */
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.player-o {
+  color: #2196f3;
+  /* Bright blue for Player O */
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.reset-btn {
+  padding: 12px 25px;
+  background-color: rgb(0, 238, 255);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reset-btn:hover {
+  background-color: #00b8d4;
+}
+
+.reset-btn:active {
+  background-color: #0097a7;
+}
+
+@media (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 8px;
+  }
+
+  .box {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .reset-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
